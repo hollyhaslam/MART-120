@@ -1,0 +1,87 @@
+
+    <!DOCTYPE html>
+    <html>
+        <title>Mathgame</title>
+    <head>
+        <style>
+            body{
+                background-color: cadetblue;
+                text-shadow: 3px 3px 6px gray;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            h1, h2, h3, h4, h5{
+                color: white;
+            }
+            
+
+        </style>
+        <script>
+
+            var actualAnswer
+            var number1, number2
+            var correct = 0
+            var incorrect = 0
+            var totalQuestions = 0
+            
+            function printQuestion(){
+
+                for(var i = 0; i < 5; i++)
+                {
+                    number1 = Math.floor(Math.random() * 10);
+                    number2 = Math.floor(Math.random() * 10);
+                }
+                
+                actualAnswer = number1 + number2;
+                document.getElementById("theQuestion").innerHTML = "What is " + number1 + "+" + number2 + "?"; 
+            }
+            function checkAnswer()
+            {
+                var answer = document.getElementById("txtAnswer").value;
+                if(answer == actualAnswer) 
+                {
+                    correct ++
+                    document.getElementById("finalResult").innerHTML = "Good Job!";
+                }
+                else
+                {
+                    incorrect ++
+                    document.getElementById("finalResult").innerHTML = "Not quite!";
+                }
+
+                totalQuestions ++
+                console.log(totalQuestions);
+
+                if(totalQuestions >= 10)
+                {
+                   document.getElementById("finalResult").innerHTML = "Correct " + correct + " incorrect " + incorrect + " percentage " + correct/10;
+                }
+               printQuestion();
+            }
+
+            function runGame()
+            {
+
+                for (var i = 1; i < 6; i++){
+                   document.getElementById("message").innerHTML += "<h" + i + ">Let's play a math game!</h" + i + ">";
+                }
+                printQuestion();
+            }
+        </script>
+    </head>
+    <body onload="runGame()">
+            
+        <span id="message"></span>
+        <div id="theQuestion"></div>
+        <table>
+            <tr>
+                <td><input type="text" id="txtAnswer"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="btnSubmit" onClick="checkAnswer();">Submit</button></td>
+            </tr>
+        </table>
+        <div id="finalResult"></div>
+    </body>
+    </html>
+    
+

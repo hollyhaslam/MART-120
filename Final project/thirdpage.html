@@ -1,0 +1,101 @@
+<html>
+    <head> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+            body {
+                margin-left: 30px;
+            }
+        </style>
+        <script>
+            function checkForm()
+            {
+                var name;
+                var email;
+                var phoneNumber;
+                var terms;
+
+
+                name = document.getElementById("txtName").value
+                email = document.getElementById("txtEmail").value
+                phoneNumber = document.getElementById("txtPhone").value
+                terms = document.getElementById("terms").value
+
+
+                if(phoneNumber == "")
+                {
+                    document.getElementById("txtPhone").style.backgroundColor = "red";
+                    document.getElementById("txtPhone").focus();
+                    
+                }
+                else
+                {
+                    document.getElementById("txtPhone").style.backgroundColor = "white";
+                }
+                if(email == "")
+                {
+                   
+                    document.getElementById("txtEmail").style.backgroundColor = "red";
+                    document.getElementById("txtEmail").focus();
+                    
+                }
+                else
+                {
+                    document.getElementById("txtEmail").style.backgroundColor = "white";
+                }
+                if(name == "")
+                {
+                    document.getElementById("txtName").style.backgroundColor = "red";
+                    document.getElementById("txtName").focus();
+                    
+                }
+                else
+                {
+                    document.getElementById("txtName").style.backgroundColor = "white";
+                }  
+                if(terms == "") 
+                {
+                    document.getElementById("terms").style.backgroundColor = "red";
+                    document.getElementById("txtName").focus();
+                }
+                else
+                {
+                    document.getElementById("txtName").style.backgroundColor = "white";
+                }
+
+            }
+        </script>
+    </head>
+    <title>Third Page</title>
+    <body>
+        <h2 style="color:rgb(235, 184, 55)">Contact me:</h2>
+        <p><em>Holly Haslam <br> 
+            <a href="mailto: holly@umconnect.umt.edu">holly_haslam@umconnect.umt.edu</a></em></p>
+            <hr>
+        <h4 id="grcolor">Please enter the following information: </h4>
+     
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" id= "txtName"></td>       
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" id="txtEmail"></td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td><input type="text" id="txtPhone"></td>
+                </tr>
+                <tr>
+                <input type="checkbox" id="terms"> I agree to the terms and conditions
+                </tr>
+                <tr>
+                    <td colspan="2"><button id="btnSubmit" onclick="checkForm();">Submit</button></td>
+                </tr>
+            </table>
+            <hr>
+            <br>
+            <a href="homePage.html">Return to home page</a>
+            
+    </body>
+</html>
